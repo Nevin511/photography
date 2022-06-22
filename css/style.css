@@ -1,0 +1,248 @@
+/** adding font **/
+h1, h2, h3{
+  font-family: "Montserrat", sans-serif;
+}
+p, a{
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+/** set up our grid **/
+body{
+    margin: 0px !important;
+    grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "footer footer footer footer";
+    grid-template-rows: auto;
+}
+/** adding styles and aligning the header tag **/
+header{
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
+header > article{
+  height: 50px;
+}
+header > article > img{
+  height: 100%;
+  width: auto;
+}
+header > nav > ul{
+  display: flex;
+  list-style: none;
+}
+header > nav > ul > li{
+  padding: 0px 10px;
+}
+header > nav > ul > li > a{
+  color: #ffffff;
+  text-decoration: none;
+}
+header > nav > ul > li:hover > a{
+  color: yellow;
+  text-decoration: underline;
+}
+/** style the sections inside the main tag **/
+main{
+  grid-area: main;
+  /**making a grid container **/
+  grid-template-areas:
+  "masthead masthead masthead masthead"
+  "row-one row-one row-one row-one"
+  "row-two row-two row-two row-two"
+  "row-three row-three row-three row-three"
+  "row-four row-four row-four row-four";
+  grid-template-rows: auto;
+}
+/** style the masthead **/
+main > .masthead{
+  grid-area: masthead;
+  /** add the background image **/
+  background-image: url("../img/image10.jpg");
+  background-size:cover;
+  height: 100vh;
+}
+/** masthead content **/
+main > .masthead > div:nth-child(1){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /**add a semi-transparent blue mask over the image **/
+  background-color: rgba(0, 75, 135, 0.5);
+  height: 100%;
+}
+main > .masthead > div > div > h1{
+  font-size: 44px;
+  color: #ffffff;
+}
+main > .masthead > div > div > a{
+  border: solid 3px yellow;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff;
+}
+/**adding a hover to 'a' tag **/
+main > .masthead > div > div > a:hover{
+  background-color: #000000;
+  color: yellow;
+}
+/**adding 4 columns in row-one**/
+main > .row-one{
+  grid-area: row-one;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+}
+/**adding 6 columns in row-two**/
+main > .row-two{
+  grid-area: row-two;
+  display: grid;
+  grid-template-columns: 15% 15% 15% 15% 15% 15%;
+}
+/**aligning row-two**/
+main > .row-two > article > img{
+  width: 100%;
+  height: auto;
+}
+/**style row-three**/
+main > .row-three{
+  grid-area: row-three;
+  display: flex;
+  flex-grow: 1;
+  padding: 2% 2%;
+}
+main > .row-three > article:nth-child(1){
+  padding: 10px;
+  color: #ffffff;
+}
+/**style image of row-three**/
+main > .row-three > article > img{
+  width: auto;
+  height: 250px;
+}
+/**style texts of row-four**/
+main > .row-four >p{
+  padding: 1% ;
+}
+/**highlight row-four**/
+.highlight{
+  background-color: teal;
+  color: #ffffff;
+}
+/** style the footer **/
+footer{
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  align-items: center;
+  background-color: #0e0e0e;
+}
+footer > article{
+  color: #ffffff;
+  padding: 15px;
+}
+/** align the image **/
+footer > article:nth-child(1) > img{
+  width: 150px;
+  height: auto;
+}
+/** making the header fixed while scrolling and also style using javascript**/
+.show {
+  display: block;
+}
+.scrolled-menu{
+  background-color: #000000;
+  position: fixed;
+  width: 100%;
+}
+.scrolled-menu > nav{
+  padding-bottom: 3%;
+}
+.scrolled-menu > nav > ul > li > a{
+  color: cyan;
+}
+/** style the gallery **/
+.gallery-row {
+  padding: 0px 4px;
+}
+.gallery-column {
+  display: grid;
+}
+.gallery-column img {
+  margin-top: 1px;
+  width: 100%;
+}
+.gallery{
+  padding: 1%;
+  text-align: center;
+}
+.btn {
+  border: solid black 2px;
+  padding: 10px 10px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Responsive CSS */
+/**adding the media query **/
+
+/** using the min and max width **/
+@media screen and (min-width: 1240px) and (max-width: 1300px){
+  /** masthead content **/
+  main > .masthead > div:nth-child(1){
+    background-color: rgba(100, 167, 11, 0.7);
+  }
+}
+
+@media screen and (max-width: 1024px){
+  /** adjust the row-two **/
+  main > .row-two{
+    /** let's make the images form three rows **/
+    grid-template-columns: repeat(3, 33% [col-start]);
+    grid-template-rows: auto;
+    row-gap: 5px;
+  }
+  /** aligning the header while scrolling **/
+  .scrolled-menu > nav{
+    padding-bottom: 4%;
+  }
+
+@media screen and (max-width: 768px){
+  /**  masthead **/
+  main > .masthead{
+    height: 50vh;
+  }
+  /** row-one is changing to 2 column rows**/
+  main > .row-one{
+    grid-template-columns: repeat(2, 50% [col-start]);
+    grid-template-rows: auto;
+    row-gap: 5px;
+  }
+  /** row-two is changing to 2 column rows **/
+  main > .row-two{
+    grid-template-columns: repeat(2, 50% [col-start]);
+    grid-template-rows: auto;
+    row-gap: 5px;
+  }
+  /** row-three will become a 1 column row **/
+  main > .row-three{
+    flex-flow: column;
+  }
+  /** adjust the text and image **/
+  main > .row-three > article{
+    width: 100%;
+  }
+  main > .row-three > article > img{
+    width: auto;
+    height: 50vh;
+  }
+  /** aligning the header while scrolling **/
+  .scrolled-menu > nav{
+    padding-bottom: 5%;
+  }
+}

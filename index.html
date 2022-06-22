@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photography page using JavaScript & jQuery</title>
+    <meta name="description" content="Photography webpage">
+    <meta name="robots" content="noindex, nofollow">
+    <!--adding css-->
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- link up JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/javascript.js"></script>
+  </head>
+  <body>
+    <!-- add our header -->
+    <header id="navigation" class="menu-row">
+    </header>
+    <!-- add our main container -->
+    <main>
+      <!-- add our masthead -->
+      <section class="masthead">
+        <!-- adding a div so that I can add a background colour -->
+        <div>
+          <!-- adding another div to contain some links -->
+          <div>
+            <h1>World of photography</h1>
+            <a href="https://www.shutterstock.com/">Link One</a>
+            <a href="https://unsplash.com/">Link Two</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- this row contain 4 columns, and adding a class and button to edit with js -->
+      <section class="row-one">
+        <!-- article in first column-->
+        <article>
+          <h3><span class="mark">Aaron Siskind</span></h3>
+          <p >“Photography is a way of feeling, of touching, of loving. What you have caught on film is captured forever… It remembers little things, long after you have forgotten everything.”</p>
+        </article>
+        <!-- article in second column-->
+        <article>
+          <h3><span class="mark">Eve Arnold</span></h3>
+          <p>“If the photographer is interested in the people in front of his lens, and if he is compassionate, it’s already a lot. The instrument is not the camera but the photographer.”</p>
+        </article>
+        <!-- article in third column-->
+        <article>
+          <h3><span class="mark">Annie Leibovitz</span></h3>
+          <p>“The camera makes you forget you’re there. It’s not like you are hiding but you forget, you are just looking so much.”</p>
+        </article>
+        <!-- article in fourth column-->
+        <article>
+          <h3><span class="mark">Matt Hardy</span></h3>
+          <p>“Beauty can be seen in all things, seeing and composing the beauty is what separates the snapshot from the photograph.”</p>
+        </article>
+        <button onclick="slideUp()">Click to slide up text</button>
+      </section>
+
+      <!-- adding second row and this row contain 6 columns. Also adding a class and button to edit with js -->
+      <section class="row-two">
+        <article>
+          <img src="./img/w1.jpg" alt="image one">
+        </article>
+          <article>
+            <img src="./img/image13.jpg" alt="image two">
+          </article>
+            <article>
+              <img src="./img/image1.jpg" alt="image three">
+            </article>
+          <article>
+            <img src="./img/image5.jpg" alt="image four">
+          </article>
+        <article>
+          <img src="./img/image6.jpg" alt="image five">
+        </article>
+        <article>
+          <img src="./img/image7.jpg" alt="image six">
+        </article>
+        <button onclick="slideUp()">Double click to hide images</button>
+      </section>
+
+      <!-- adding third row and this row contain 2 columns. Also adding a class and button to edit with js -->
+      <section class="row-three">
+        <article>
+          <p id="demo">Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of an image sensor, or chemically by means of a light-sensitive material such as photographic film. It is employed in many fields of science, manufacturing, and business, as well as its more direct uses for art, film and video production, recreational purposes, hobby, and mass communication.Typically, a lens is used to focus the light reflected or emitted from objects into a real image on the light-sensitive surface inside a camera during a timed exposure. With an electronic image sensor, this produces an electrical charge at each pixel, which is electronically processed and stored in a digital image file for subsequent display or processing. The result with photographic emulsion is an invisible latent image, which is later chemically "developed" into a visible image, either negative or positive depending on the purpose of the photographic material and the method of processing</p>
+          <button onclick="changeStyle()">Click to see some style change</button>
+        </article>
+        <article>
+          <img src="./img/image15.jpg" alt="image two">
+        </article>
+      </section>
+
+      <!-- adding fourth row and this row contains some text to edit with js -->
+      <section class="row-four">
+        <p>We take photos as a return ticket to the moment otherwise gone.</p>
+        <p>I'm not interested in shooting new things, I'm interested in shooting something new.</p>
+      </section>
+    </main>
+
+    <!-- add our gallery section-->
+    <section id="gallery" class="gallery">
+      <h2>Take a look at the photography collections</h2>
+      <button class="btn active" onclick="one()">1</button>
+      <button class="btn " onclick="two()">2</button>
+      <button class="btn " onclick="three()">3</button>
+    </section>
+
+    <section class="gallery-row">
+      <article class="gallery-column">
+        <div><img src="./img/image1.jpg" alt="image"></div>
+        <div><img src="./img/image2.jpg" alt="image"></div>
+        <div><img src="./img/image3.jpg" alt="image"></div>
+        <div><img src="./img/image4.jpg" alt="image"></div>
+        <div><img src="./img/image16.jpg" alt="image"></div>
+        <div><img src="./img/image6.jpg" alt="image"></div>
+        <div><img src="./img/image11.jpg" alt="image"></div>
+        <div><img src="./img/image9.jpg" alt="image"></div>
+      </article>
+    </section>
+
+    <!-- adding footer -->
+    <footer id="footer"></footer>
+  </body>
+</html>
